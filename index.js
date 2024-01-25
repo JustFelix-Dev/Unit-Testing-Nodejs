@@ -2,4 +2,8 @@ const add = (a,b)=>{
     return a + b
 }
 
-module.exports= { add}
+const err = ()=>{
+     throw new Error('This is an error')
+}
+
+module.exports= { add,err}

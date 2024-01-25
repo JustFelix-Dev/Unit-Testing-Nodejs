@@ -1,4 +1,4 @@
-const { add } = require('../index')
+const { add,err } = require('../index')
 
 test('toBe',()=>{
     expect(add(1,2)).toBe(3)
@@ -26,4 +26,17 @@ test('toBeLessThan',()=>{
 
 test('toMatch',()=>{
     expect(add("Hello","World")).toMatch(/Hello/)
+})
+
+test("toThrow",()=>{
+    expect(() => err()).toThrow('This is an error');
+})
+
+describe('I am a group',()=>{
+    test("toThrow",()=>{
+        expect(() => err()).toThrow('This is an error');
+    })
+    test("toThrow",()=>{
+        expect(() => err()).toThrow('This is an error');
+    })
 })
