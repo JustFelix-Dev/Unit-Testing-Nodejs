@@ -11,3 +11,19 @@ test('toEqual',()=>{
 test('toBeDefined',()=>{
     expect(add(1,2)).toBeDefined()
 })
+
+test('toBeNull',()=>{
+    expect(add(1,2)).not.toBeNull()
+})
+
+test('toBeGreaterThan',()=>{
+    expect(add(1,2)).toBeGreaterThan(1)
+})
+
+test('toBeLessThan',()=>{
+    expect(add(1,2)).toBeLessThan(4)
+})
+
+test('toMatch',()=>{
+    expect(add("Hello","World")).toMatch(/Hello/)
+})
