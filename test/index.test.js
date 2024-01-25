@@ -1,4 +1,6 @@
-const { add,err,promiseTest } = require('../index')
+const { add,err,promiseTest,app } = require('../index')
+
+const supertest = require("supertest");
 
 test('toBe',()=>{
     expect(add(1,2)).toBe(3)
@@ -48,4 +50,13 @@ test('promiseTest',()=>{
         expect(error).toBe('-ve');
         
     })
+})
+
+test('toContain',async()=>{
+   await supertest(app)
+   .get('/users')
+   .expect(200)
+   .then(result=>{
+    expect( result && result.body && typeof result.body === 'object')
+   })
 })

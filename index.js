@@ -1,3 +1,18 @@
+const express = require("express")
+const app = express()
+
+app.use(express.json())
+app.get('/users',(req,res)=>{
+    res.status(200).json({
+        users:[
+            {
+                name:'Felix',
+                email:'owolabofelix78@gmail.com',
+                password: "noblefella"
+            }
+        ]
+    })
+})
 const add = (a,b)=>{
     return a + b
 }
@@ -16,4 +31,6 @@ const promiseTest=(a,b)=>{
     })
 }
 
-module.exports= { add,err,promiseTest}
+app.listen(2000)
+
+module.exports= { add,err,promiseTest,app }
