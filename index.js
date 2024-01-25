@@ -6,4 +6,14 @@ const err = ()=>{
      throw new Error('This is an error')
 }
 
-module.exports= { add,err}
+const promiseTest=(a,b)=>{
+   return new Promise((resolve,reject)=>{
+    if(a-b>0){
+        resolve('+ve')
+    }else{
+        reject('-ve')
+    }
+    })
+}
+
+module.exports= { add,err,promiseTest}

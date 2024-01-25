@@ -1,4 +1,4 @@
-const { add,err } = require('../index')
+const { add,err,promiseTest } = require('../index')
 
 test('toBe',()=>{
     expect(add(1,2)).toBe(3)
@@ -38,5 +38,14 @@ describe('I am a group',()=>{
     })
     test("toThrow",()=>{
         expect(() => err()).toThrow('This is an error');
+    })
+})
+
+test('promiseTest',()=>{
+    return promiseTest(1,2).then((data)=>{
+        expect(data).toBe('+ve');
+    }).catch(error=>{
+        expect(error).toBe('-ve');
+        
     })
 })
